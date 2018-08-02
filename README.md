@@ -14,7 +14,8 @@ Ensimmäisenä tarvitsemme paikkatietoa. OpenStreetMapista löytyy todella paljo
  - Zoomaa sille alueelle josta haluat dataa
  - Valitse ylävalikosta wizard ja kirjoita kenttään `amenity=bicycle_parking` ja klikkaa build and run query.
  - Valitse ylävalikosta export ja download  as GeoJSON
- - Voit ladata myös muita tasoja karttaasi, esimerkiksi kaikki tiet voisi olla hyödyllisiä: `highway=*`
+ - Voit ladata myös muita tasoja karttaasi, esimerkiksi baarit: `amenity=bar` tai leikkipaikat `leisure=playground`
+ 
  
  ### 1.2 Luo vektoritiiliä GeoJSONista
 
