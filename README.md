@@ -17,16 +17,30 @@ Ensimmäisenä tarvitsemme paikkatietoa. OpenStreetMapista löytyy todella paljo
  - Voit ladata myös muita tasoja karttaasi, esimerkiksi baarit: `amenity=bar` tai leikkipaikat `leisure=playground`. Voit myös itse tutkia OpenSreetMapia ja keksiä mitä aineistoa haluaisit käyttää.
  
  ### 1.2 Luo vektoritiiliä GeoJSONista
-Helpoin tapa esittää GeoJSONia selaimessa on käyttää kartanpiirtokirjastoa, kuten Leafletia tai Openlayersia. Nyt haluamme kuitenkin tehdä nimenomaan vektoritiiliä. Tähän on olemassa Mapboxin työkaluja. Mapbox tarjoaa kirjaston, ![geojson-vt](https://github.com/mapbox/geojson-vt), joka pilkkoo GeoJSONia vektoritiiliksi lennossa. Toinen hyödyllinen työkalu on myös Mapboxin tippecanoe, joka generoi mbtiles-tiilikokoelmia shapefileista tai GeoJSONista. Asenna tippecanoe ![näillä](https://github.com/mapbox/tippecanoe#installation) ohjeilla.
+Helpoin tapa esittää GeoJSONia selaimessa on käyttää kartanpiirtokirjastoa, kuten Leafletia tai Openlayersia. Nyt haluamme kuitenkin tehdä nimenomaan vektoritiiliä. Tähän on olemassa Mapboxin kehittämiä työkaluja. Mapbox tarjoaa kirjaston, ![geojson-vt](https://github.com/mapbox/geojson-vt), joka pilkkoo GeoJSONia vektoritiiliksi lennossa. Toinen hyödyllinen työkalu on myös Mapboxin tippecanoe, joka generoi mbtiles-tiilikokoelmia shapefileista tai GeoJSONista. Asenna tippecanoe ![näillä](https://github.com/mapbox/tippecanoe#installation) ohjeilla.
 
 Tippecanoen asentamisen jälkeen siirry komentorivillä hakemistoon, johon tallensit GeoJSONin ja luo tiilet komennolla: 
-`tippecanoe -o ppparkki.mbtiles -l pyoraparkki export.geojson`
+`tippecanoe -o ppparkki.mbtiles export.geojson`
 
-ppparkki.mbtiles on tiedosto, johon haluamme lopputuloksen tulevan. Sen nimi voi olla mitä vain. -l -optiolla annan nimen vektoritiilitasolle (pyoraparkki) ja export.geojson on overpassista lataamani aineisto.
+ppparkki.mbtiles on tiedosto, johon haluan lopputuloksen tulevan. Sen nimi voi olla mitä vain. export.geojson on overpassista lataamani aineisto. Jos kaikki meni hyvin, samaan kansioon pitäisi olla generoitunut ppparkki.mbtiles -niminen tiedosto.
 
-Jos kaikki meni hyvin, samaan kansioon pitäisi olla generoitunut ppparkki.mbtiles -niminen tiedosto.
+Jos generoit enemmän kuin yhden GeoJSONin, voit vain laittaa tiedostot peräkkäin tähän tapaan:
+`tippecanoe -o baaripyora.mbtiles ppparkki.geojson baarit.geojson`
+jolloin GeoJSONit tulevat mbtiles-tiedostoon erillisinä tasoina.
 
-## 1. Taustakartta OpenMapTilesin vektoritiilillä
+## 2. Käynnistä vektoritiilipalvelin
+Nyt haluamme tarkastella mbtiles-tiedoston sisältöä selaimessa. Jos sinulla sattuu olemaan docker asennettuna, helpointa on ajaa .mbtiles-tiedoston sisältävässä hakemistossa komento:
+`docker run -it -v $(pwd):/data -p 8080:80 klokantech/tileserver-gl`
+
+Dockerin käynnistämisen jälkeen avaa ![http://localhost:8080](localhost:8080) ja valitse inspect. Kannattaa kokeilla väännellä karttaa hiiren oikealla painikkeella, koska se on todella tyydyttävää. Jee, vektoritiiliä!
+
+Jos et halua käyttää dockeria, voit kokeilla jotain ![https://github.com/mapbox/awesome-vector-tiles#servers](näistä).
+
+## 3. Luo vektoritiilillesi tyyli
+Voit kirjoittaa tyylillesi suoraan raakaa jsonia, tai editoida sitä visuaalisella työkalulla, kuten ![https://maputnik.github.io/editor/](maputnikilla).
+
+
+## 4. Taustakartta OpenMapTilesin vektoritiilillä
 Voit hakea tietyltä alueelta aineistot PostgreSQL-tietokantaan ja Mapboxin työkaluilla luoda niistä vektoritiiliä, jonka jälkeen sinun pitää asentaa ja käynnistää vektoritiilipalvelin, josta tiilet haetaan. Jos et halua itse ylläpitää palvelinta, voit käyttää Mapboxin tai OpenMapTilesin tarjoilemia valmiita vektoritiilisettejä OpenStreetMap-aineistoille.
 
 Tässä ohjeessa käytän MapTileria, joka on OpenMapTilesin vektoritiilihostauspalvelu.
