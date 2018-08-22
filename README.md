@@ -20,16 +20,20 @@ Ensimmäisenä tarvitsemme paikkatietoa. OpenStreetMapista löytyy todella paljo
 Helpoin tapa esittää GeoJSONia selaimessa on käyttää kartanpiirtokirjastoa, kuten Leafletia tai Openlayersia. Nyt haluamme kuitenkin tehdä nimenomaan vektoritiiliä. Tähän on olemassa Mapboxin kehittämiä työkaluja. Mapbox tarjoaa kirjaston, ![geojson-vt](https://github.com/mapbox/geojson-vt), joka pilkkoo GeoJSONia vektoritiiliksi lennossa. Toinen hyödyllinen työkalu on myös Mapboxin tippecanoe, joka generoi mbtiles-tiilikokoelmia shapefileista tai GeoJSONista. Asenna tippecanoe ![näillä](https://github.com/mapbox/tippecanoe#installation) ohjeilla.
 
 Tippecanoen asentamisen jälkeen siirry komentorivillä hakemistoon, johon tallensit GeoJSONin ja luo tiilet komennolla: 
+
 `tippecanoe -o ppparkki.mbtiles export.geojson`
 
 ppparkki.mbtiles on tiedosto, johon haluan lopputuloksen tulevan. Sen nimi voi olla mitä vain. export.geojson on overpassista lataamani aineisto. Jos kaikki meni hyvin, samaan kansioon pitäisi olla generoitunut ppparkki.mbtiles -niminen tiedosto.
 
 Jos generoit enemmän kuin yhden GeoJSONin, voit vain laittaa tiedostot peräkkäin tähän tapaan:
+
 `tippecanoe -o baaripyora.mbtiles ppparkki.geojson baarit.geojson`
+
 jolloin GeoJSONit tulevat mbtiles-tiedostoon erillisinä tasoina.
 
 ## 2. Käynnistä vektoritiilipalvelin
 Nyt haluamme tarkastella mbtiles-tiedoston sisältöä selaimessa. Jos sinulla sattuu olemaan docker asennettuna, helpointa on ajaa .mbtiles-tiedoston sisältävässä hakemistossa komento:
+
 `docker run -it -v $(pwd):/data -p 8080:80 klokantech/tileserver-gl`
 
 Dockerin käynnistämisen jälkeen avaa ![http://localhost:8080](localhost:8080) ja valitse inspect. Kannattaa kokeilla väännellä karttaa hiiren oikealla painikkeella, koska se on todella tyydyttävää. Jee, vektoritiiliä!
