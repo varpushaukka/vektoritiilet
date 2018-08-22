@@ -1,7 +1,7 @@
 # Vektoritiilet: näin pääset alkuun!
 
 This guide is in Finnish, because it is part of an article written in Finnish. Documentation in English can be found from ![OpenMapTiles](https://openmaptiles.org/docs/) and ![Mapbox](https://www.mapbox.com/help/tutorials/) websites.
-Tämä ohje on suomeksi, koska sen on tarkoitus olla osa suomenkielistä artikkelissa Skrolli-lehdessä. Englanninkielisiä ohjeita löytyy mm. ![OpenMapTilesin](https://openmaptiles.org/docs/) ja ![Mapboxin](https://www.mapbox.com/help/tutorials/) sivuilta.
+Tämä ohje on suomeksi, koska sen on tarkoitus olla osa suomenkielistä artikkelia Skrolli-lehdessä. Englanninkielisiä ohjeita löytyy mm. ![OpenMapTilesin](https://openmaptiles.org/docs/) ja ![Mapboxin](https://www.mapbox.com/help/tutorials/) sivuilta.
 
 
 Tämän ohjeen avulla teet pohjakartan ja haet OpenStreetMapista aineistoa, joista luot vektoritiiliaineiston ja teet mieleisesi tyylin.
