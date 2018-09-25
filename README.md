@@ -8,17 +8,19 @@ Lisää teoriaa löytyy kandidaatintutkielmastani: [Vektoritiilet](http://aulis.
 Tämän ohjeen avulla teet pohjakartan ja haet OpenStreetMapista aineistoa, joista luot vektoritiiliaineiston ja teet mieleisesi tyylin. Suosittelen käyttämään jotain muuta kuin Windows-konetta.
 
 ## 1 OSM dataa vektoritiiliksi
-Ensimmäisenä tarvitsemme paikkatietoa. OpenStreetMapista löytyy todella paljon aineistoa, jota ei löydy esim Googlen kartoista. Esimerkiksi OSM:stä löytyy tieto siitä missä on pyöräparkkeja. Haetaan siis [overpassin](http://overpass-turbo.eu/) avulla kaikki Helsingin pyöräparkit. 
+Ensimmäisenä tarvitsemme paikkatietoa. [OpenStreetMapista](https://www.openstreetmap.org/#map=18/60.16940/24.93331) löytyy todella paljon aineistoa, jota ei löydy esim Googlen kartoista. Esimerkiksi OSM:stä löytyy tieto siitä missä on pyöräparkkeja. Haetaan siis [overpassin](http://overpass-turbo.eu/) avulla kaikki Helsingin pyöräparkit. 
 
 ### 1.1 Hae [overpass-turbo työkalulla](http://overpass-turbo.eu/) dataa GeoJSONina
 
  - Zoomaa sille alueelle josta haluat dataa
  - Valitse ylävalikosta wizard ja kirjoita kenttään `amenity=bicycle_parking` ja klikkaa build and run query.
  - Valitse ylävalikosta export ja download as GeoJSON
- - Voit ladata myös muita tasoja karttaasi, esimerkiksi baarit: `amenity=bar` tai leikkipaikat `leisure=playground`. Voit myös itse tutkia OpenSreetMapia ja keksiä mitä aineistoa haluaisit käyttää.
+ - Voit ladata myös muita tasoja karttaasi, esimerkiksi baarit: `amenity=bar` tai leikkipaikat `leisure=playground`. Voit myös itse tutkia OpenSreetMapia ja keksiä mitä aineistoa haluaisit käyttää. Overpass-turbo ei ole hyvä työkalu isojen aineistojen hakemiseen. Jos haluat hakea esimerkiksi kaikki Helsingin tiet, tutustu [Overpass-API:iin](https://wiki.openstreetmap.org/wiki/Overpass_API) (vaatii ohjelmointitaitoa).
  
  ### 1.2 Luo vektoritiiliä GeoJSONista
-Helpoin tapa esittää GeoJSONia selaimessa on käyttää kartanpiirtokirjastoa, kuten Leafletia tai Openlayersia. Nyt haluamme kuitenkin tehdä nimenomaan vektoritiiliä. Tähän on olemassa Mapboxin kehittämiä työkaluja. Mapbox tarjoaa kirjaston, [geojson-vt](https://github.com/mapbox/geojson-vt), joka pilkkoo GeoJSONia vektoritiiliksi lennossa. Toinen hyödyllinen työkalu on myös Mapboxin tippecanoe, joka generoi mbtiles-tiilikokoelmia shapefileista tai GeoJSONista. Asenna tippecanoe [näillä](https://github.com/mapbox/tippecanoe#installation) ohjeilla.
+Helpoin tapa esittää GeoJSONia selaimessa on käyttää kartanpiirtokirjastoa, kuten Leafletia tai Openlayersia. Nyt haluamme kuitenkin tehdä nimenomaan vektoritiiliä. Tähän on olemassa mm. Mapboxin kehittämiä työkaluja. Mapbox tarjoaa kirjaston, [geojson-vt](https://github.com/mapbox/geojson-vt), joka pilkkoo GeoJSONia vektoritiiliksi lennossa. Toinen hyödyllinen työkalu on myös Mapboxin tippecanoe, joka generoi mbtiles-tiilikokoelmia shapefileista tai GeoJSONista. 
+
+Asenna tippecanoe [näillä](https://github.com/mapbox/tippecanoe#installation) ohjeilla.
 
 Tippecanoen asentamisen jälkeen siirry komentorivillä hakemistoon, johon tallensit GeoJSONin ja luo tiilet komennolla: 
 
@@ -43,6 +45,7 @@ Jos et halua käyttää dockeria, voit kokeilla jotain [https://github.com/mapbo
 
 ## 3. Luo vektoritiilillesi tyyli
 Vektoritiilityyli määritellään piirtäjäkirjaston vaatimalla syntaksilla. Esimerkiksi mapbox-gl -javascriptkirjasto syö json-muotoisen tyylimäärittelyn, jonka dokumentaatiota voi lukea [Mapboxin](https://www.mapbox.com/mapbox-gl-js/style-spec) sivuilta.
+
 
 Voit kirjoittaa tyylillesi suoraan raakaa jsonia, tai editoida sitä visuaalisella työkalulla, kuten [https://maputnik.github.io/editor/](maputnikilla).
 
