@@ -18,7 +18,7 @@ Ensimmäisenä tarvitsemme paikkatietoa. [OpenStreetMapista](https://www.openstr
  - Voit ladata myös muita tasoja karttaasi, esimerkiksi baarit: `amenity=bar` tai leikkipaikat `leisure=playground`. Voit myös itse tutkia OpenSreetMapia ja keksiä mitä aineistoa haluaisit käyttää. Overpass-turbo ei ole hyvä työkalu isojen aineistojen hakemiseen. Jos haluat hakea esimerkiksi kaikki Helsingin tiet, tutustu [Overpass-API:iin](https://wiki.openstreetmap.org/wiki/Overpass_API) (vaatii ohjelmointitaitoa).
  
  ### 1.2 Luo vektoritiiliä GeoJSONista
-Helpoin tapa esittää GeoJSONia selaimessa on käyttää kartanpiirtokirjastoa, kuten Leafletia tai Openlayersia. Nyt haluamme kuitenkin tehdä nimenomaan vektoritiiliä. Tähän on olemassa mm. Mapboxin kehittämiä työkaluja. Mapbox tarjoaa kirjaston, [geojson-vt](https://github.com/mapbox/geojson-vt), joka pilkkoo GeoJSONia vektoritiiliksi lennossa. Toinen hyödyllinen työkalu on myös Mapboxin tippecanoe, joka generoi mbtiles-tiilikokoelmia shapefileista tai GeoJSONista. 
+Helpoin tapa esittää GeoJSONia selaimessa on käyttää kartanpiirtokirjastoa, kuten Leafletia tai Openlayersia. Nyt haluamme kuitenkin tehdä nimenomaan vektoritiiliä. Tähän on olemassa mm. Mapboxin kehittämiä työkaluja. Mapbox tarjoaa kirjaston, [geojson-vt](https://github.com/mapbox/geojson-vt), joka pilkkoo GeoJSONia vektoritiiliksi lennossa. Toinen hyödyllinen työkalu on myös Mapboxin tippecanoe, joka generoi mbtiles-tiilikokoelmia GeoJSONista. 
 
 Asenna tippecanoe [näillä](https://github.com/mapbox/tippecanoe#installation) ohjeilla.
 
@@ -45,7 +45,6 @@ Jos et halua käyttää dockeria, voit kokeilla jotain [https://github.com/mapbo
 
 ## 3. Luo vektoritiilillesi tyyli
 Vektoritiilityyli määritellään piirtäjäkirjaston vaatimalla syntaksilla. Esimerkiksi mapbox-gl -javascriptkirjasto syö json-muotoisen tyylimäärittelyn, jonka dokumentaatiota voi lukea [Mapboxin](https://www.mapbox.com/mapbox-gl-js/style-spec) sivuilta.
-
 
 Voit kirjoittaa tyylillesi suoraan raakaa jsonia, tai editoida sitä visuaalisella työkalulla, kuten [https://maputnik.github.io/editor/](maputnikilla).
 
