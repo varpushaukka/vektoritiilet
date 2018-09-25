@@ -3,9 +3,9 @@
 This guide is in Finnish, because it is part of an article written in Finnish. Documentation in English can be found from [OpenMapTiles](https://openmaptiles.org/docs/) and [Mapbox](https://www.mapbox.com/help/tutorials/) websites.
 Tämä ohje on suomeksi, koska sen on tarkoitus olla osa suomenkielistä artikkelia [Skrolli-lehdessä](https://skrolli.fi/numerot/2018-3/). Englanninkielisiä ohjeita löytyy mm. [OpenMapTilesin](https://openmaptiles.org/docs/) ja [Mapboxin](https://www.mapbox.com/help/tutorials/) sivuilta.
 
+Lisää teoriaa löytyy kandidaatintutkielmastani: [Vektoritiilet](http://aulis.sange.fi/~varpushaukka/vektoritiilet.pdf)
 
-
-Tämän ohjeen avulla teet pohjakartan ja haet OpenStreetMapista aineistoa, joista luot vektoritiiliaineiston ja teet mieleisesi tyylin.
+Tämän ohjeen avulla teet pohjakartan ja haet OpenStreetMapista aineistoa, joista luot vektoritiiliaineiston ja teet mieleisesi tyylin. Suosittelen käyttämään jotain muuta kuin Windows-konetta.
 
 ## 1 OSM dataa vektoritiiliksi
 Ensimmäisenä tarvitsemme paikkatietoa. OpenStreetMapista löytyy todella paljon aineistoa, jota ei löydy esim Googlen kartoista. Esimerkiksi OSM:stä löytyy tieto siitä missä on pyöräparkkeja. Haetaan siis [overpassin](http://overpass-turbo.eu/) avulla kaikki Helsingin pyöräparkit. 
@@ -42,7 +42,9 @@ Dockerin käynnistämisen jälkeen avaa [http://localhost:8080](localhost:8080) 
 Jos et halua käyttää dockeria, voit kokeilla jotain [https://github.com/mapbox/awesome-vector-tiles#servers](näistä).
 
 ## 3. Luo vektoritiilillesi tyyli
-Voit kirjoittaa tyylillesi suoraan raakaa jsonia, tai editoida sitä visuaalisella työkalulla, kuten ![https://maputnik.github.io/editor/](maputnikilla).
+Vektoritiilityyli määritellään piirtäjäkirjaston vaatimalla syntaksilla. Esimerkiksi mapbox-gl -javascriptkirjasto syö json-muotoisen tyylimäärittelyn, jonka dokumentaatiota voi lukea [Mapboxin](https://www.mapbox.com/mapbox-gl-js/style-spec) sivuilta.
+
+Voit kirjoittaa tyylillesi suoraan raakaa jsonia, tai editoida sitä visuaalisella työkalulla, kuten [https://maputnik.github.io/editor/](maputnikilla).
 
 
 ## 4. Taustakartta OpenMapTilesin vektoritiilillä
