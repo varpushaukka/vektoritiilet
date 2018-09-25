@@ -7,6 +7,8 @@ Lisää teoriaa löytyy kandidaatintutkielmastani: [Vektoritiilet](http://aulis.
 
 Tämän ohjeen avulla teet pohjakartan ja haet OpenStreetMapista aineistoa, joista luot vektoritiiliaineiston ja teet mieleisesi tyylin. Suosittelen käyttämään jotain muuta kuin Windows-konetta.
 
+Jos löydät tästä ohjeesta joitain virheitä, tai haluat jatkokehittää tätä, voit luoda issuen, tai forkata ja tehdä pull requestin.
+
 ## 1 OSM dataa vektoritiiliksi
 Ensimmäisenä tarvitsemme paikkatietoa. [OpenStreetMapista](https://www.openstreetmap.org/#map=18/60.16940/24.93331) löytyy todella paljon aineistoa, jota ei löydy esim Googlen kartoista. Esimerkiksi OSM:stä löytyy tieto siitä missä on pyöräparkkeja. Haetaan siis [overpassin](http://overpass-turbo.eu/) avulla kaikki Helsingin pyöräparkit. 
 
