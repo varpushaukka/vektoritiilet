@@ -19,6 +19,8 @@ Ensimmäisenä tarvitsemme paikkatietoa. [OpenStreetMapista](https://www.openstr
  - Valitse ylävalikosta export ja download as GeoJSON
  - Voit ladata myös muita tasoja karttaasi, esimerkiksi baarit: `amenity=bar` tai leikkipaikat `leisure=playground`. Voit myös itse tutkia OpenSreetMapia ja keksiä mitä aineistoa haluaisit käyttää. Overpass-turbo ei ole hyvä työkalu isojen aineistojen hakemiseen. Jos haluat hakea esimerkiksi kaikki Helsingin tiet, tutustu [Overpass-API:iin](https://wiki.openstreetmap.org/wiki/Overpass_API) (vaatii ohjelmointitaitoa).
  
+ ![querywizard](querywizard.PNG)
+ 
  ### 1.2 Luo vektoritiiliä GeoJSONista
 Helpoin tapa esittää GeoJSONia selaimessa on käyttää kartanpiirtokirjastoa, kuten Leafletia tai Openlayersia. Nyt haluamme kuitenkin tehdä nimenomaan vektoritiiliä. Tähän on olemassa mm. Mapboxin kehittämiä työkaluja. Mapbox tarjoaa kirjaston, [geojson-vt](https://github.com/mapbox/geojson-vt), joka pilkkoo GeoJSONia vektoritiiliksi lennossa. Toinen hyödyllinen työkalu on myös Mapboxin tippecanoe, joka generoi mbtiles-tiilikokoelmia GeoJSONista. 
 
