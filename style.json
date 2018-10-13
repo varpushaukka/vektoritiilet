@@ -1,12 +1,11 @@
 {
   "version": 8,
   "name": "Vektoritiilitesti",
-  "sprite": "mapbox://sprites/mapbox/streets-v8",
-  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+  "metadata": {},
   "sources": {
     "tiilitesti": {
       "type": "vector",
-      "url": "http://localhost:8080/data/atest4.json"
+      "url": "https://localhost:8443/data/atest4.json"
     }
   },
   "layers": [
@@ -15,12 +14,13 @@
       "type": "fill",
       "source": "tiilitesti",
       "source-layer": "bicycle",
-      "paint": {
-        "fill-color": "rgba(255, 44, 44, 1)"
-      },
       "layout": {
         "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(255, 44, 44, 1)"
       }
     }
-  ]
+  ],
+  "id": "7676ms0jk"
 }

@@ -21,9 +21,10 @@
   var map = new mapboxgl.Map({
     container: "map", // container id
     style: "style.json", //stylesheet location
-    center: [60.171019,24.939185], // starting position
-    zoom: 18 // starting zoom
-  });
+    center: [24.939185,60.171019], // starting position
+    zoom: 15 // starting zoom
+  })
+  map.on('moveend', () => console.log('zoom'));
 </script>
 </body>
 </html>
