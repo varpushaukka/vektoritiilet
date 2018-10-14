@@ -43,14 +43,14 @@ Nyt haluamme tarkastella mbtiles-tiedoston sisältöä selaimessa. Jos sinulla s
 
 `docker run -it -v $(pwd):/data -p 8080:80 klokantech/tileserver-gl`
 
-Dockerin käynnistämisen jälkeen avaa [http://localhost:8080](localhost:8080) ja valitse inspect. Kannattaa kokeilla väännellä karttaa hiiren oikealla painikkeella, koska se on todella tyydyttävää. Jee, vektoritiiliä!
+Dockerin käynnistämisen jälkeen avaa [localhost:8080](http://localhost:8080) ja valitse inspect. Kannattaa kokeilla väännellä karttaa hiiren oikealla painikkeella, koska se on todella tyydyttävää. Jee, vektoritiiliä!
 
-Jos et halua käyttää dockeria, voit kokeilla jotain [https://github.com/mapbox/awesome-vector-tiles#servers](näistä).
+Jos et halua käyttää dockeria, voit kokeilla jotain [näistä](https://github.com/mapbox/awesome-vector-tiles#servers).
 
 ## 3. Luo vektoritiilillesi tyyli
 Vektoritiilityyli määritellään piirtäjäkirjaston vaatimalla syntaksilla. Esimerkiksi mapbox-gl -javascriptkirjasto syö json-muotoisen tyylimäärittelyn, jonka dokumentaatiota voi lukea mapbox-gl:n [dokumentaatiosivuilta](https://www.mapbox.com/mapbox-gl-js/style-spec).
 
-Voit kirjoittaa tyylillesi suoraan raakaa jsonia, tai editoida sitä visuaalisella työkalulla, kuten [https://maputnik.github.io/editor/](maputnikilla).
+Voit kirjoittaa tyylillesi suoraan raakaa jsonia, tai editoida sitä visuaalisella työkalulla, kuten [maputinikilla](https://maputnik.github.io/editor/).
  
 ## 4. Tee pieni sovellus
 Kloonaa tämä repo, tai ota mallia tämän repon index.jsonista ja server.js:stä.
