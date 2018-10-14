@@ -5,7 +5,7 @@ Tämä ohje on suomeksi, koska sen on tarkoitus olla osa suomenkielistä artikke
 
 Lisää teoriaa löytyy kandidaatintutkielmastani: [Vektoritiilet](http://aulis.sange.fi/~varpushaukka/vektoritiilet.pdf)
 
-Tämän ohjeen avulla teet pohjakartan ja haet OpenStreetMapista aineistoa, joista luot vektoritiiliaineiston ja teet mieleisesi tyylin. Suosittelen käyttämään jotain muuta kuin Windows-konetta.
+Tämän ohjeen avulla haet OpenStreetMapista aineistoa, joista luot vektoritiiliaineiston ja teet mieleisesi tyylin. Suosittelen käyttämään jotain muuta kuin Windows-konetta.
 
 Jos löydät tästä ohjeesta joitain virheitä, tai haluat jatkokehittää tätä, voit luoda issuen, tai forkata ja tehdä pull requestin.
 
@@ -48,13 +48,23 @@ Dockerin käynnistämisen jälkeen avaa [http://localhost:8080](localhost:8080) 
 Jos et halua käyttää dockeria, voit kokeilla jotain [https://github.com/mapbox/awesome-vector-tiles#servers](näistä).
 
 ## 3. Luo vektoritiilillesi tyyli
-Vektoritiilityyli määritellään piirtäjäkirjaston vaatimalla syntaksilla. Esimerkiksi mapbox-gl -javascriptkirjasto syö json-muotoisen tyylimäärittelyn, jonka dokumentaatiota voi lukea [Mapboxin](https://www.mapbox.com/mapbox-gl-js/style-spec) sivuilta.
+Vektoritiilityyli määritellään piirtäjäkirjaston vaatimalla syntaksilla. Esimerkiksi mapbox-gl -javascriptkirjasto syö json-muotoisen tyylimäärittelyn, jonka dokumentaatiota voi lukea mapbox-gl:n [dokumentaatiosivuilta](https://www.mapbox.com/mapbox-gl-js/style-spec).
 
 Voit kirjoittaa tyylillesi suoraan raakaa jsonia, tai editoida sitä visuaalisella työkalulla, kuten [https://maputnik.github.io/editor/](maputnikilla).
+ 
+## 4. Tee pieni sovellus
+Kloonaa tämä repo, tai ota mallia tämän repon index.jsonista ja server.js:stä.
 
+Jos kloonaat, aja ensin
+
+`npm install`
+
+ja sitten
+
+`npm start`
 
 ## 4. Taustakartta OpenMapTilesin vektoritiilillä
-Voit hakea tietyltä alueelta aineistot PostgreSQL-tietokantaan ja Mapboxin työkaluilla luoda niistä vektoritiiliä, jonka jälkeen sinun pitää asentaa ja käynnistää vektoritiilipalvelin, josta tiilet haetaan. Jos et halua itse ylläpitää palvelinta, voit käyttää Mapboxin tai OpenMapTilesin tarjoilemia valmiita vektoritiilisettejä OpenStreetMap-aineistoille.
+Voit hakea tietyltä alueelta aineistot PostgreSQL-tietokantaan ja Mapboxin tai OpenMaptilesin työkaluilla luoda niistä vektoritiiliä, jonka jälkeen sinun pitää asentaa ja käynnistää vektoritiilipalvelin, josta tiilet haetaan. Jos et halua itse ylläpitää palvelinta, voit käyttää Mapboxin tai OpenMapTilesin tarjoilemia valmiita vektoritiilisettejä OpenStreetMap-aineistoille.
 
-Tässä ohjeessa käytän MapTileria, joka on OpenMapTilesin vektoritiilihostauspalvelu.
+
 
